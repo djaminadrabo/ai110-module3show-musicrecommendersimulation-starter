@@ -70,6 +70,12 @@ Prompts:
 - Cases where the system overfits to one preference  
 - Ways the scoring might unintentionally favor some users  
 
+- The system gives more importance to matching the genre than the song's energy. This means it may recommend a rock song with the wrong mood instead of a pop song that matches the user's preferred energy.
+
+- The recommender doesn't look at the artist, so it could suggest several songs by the same artist, making the recommendations less diverse.
+
+- Since there are only 10 songs in the dataset, users with uncommon music tastes may receive poor or unrelated recommendations because there aren't enough songs to choose from.
+
 ---
 
 ## 7. Evaluation  
@@ -84,6 +90,12 @@ Prompts:
 - Any simple tests or comparisons you ran  
 
 No need for numeric metrics unless you created some.
+
+- I tested two user profiles: one that likes high-energy pop music and another that prefers relaxing lofi music.
+
+- The recommender worked well by giving upbeat songs to the pop user and slower, relaxing songs to the lofi user.
+
+-  If a user chooses a genre that isn't in the dataset, such as country, the recommendations become almost random because the system has no matching songs and only compares energy levels.
 
 ---
 
@@ -109,3 +121,7 @@ Prompts:
 - What you learned about recommender systems  
 - Something unexpected or interesting you discovered  
 - How this changed the way you think about music recommendation apps  
+
+- I learned that a recommendation system doesn't actually understand music. It simply compares numbers and features to find the closest match.
+
+- The biggest surprise was seeing how easily bias can be added. By giving genre more weight than energy, I unintentionally made the system focus more on genre labels than on the overall feel or mood of the music.
